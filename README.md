@@ -3,7 +3,7 @@
 
 # Project 1: Gaze and Prompt-based Object Detection
 
-<b><u>BASIC SETUP DETAILS:</u></b>
+<b><u>BASIC SOFTWARE REQUIREMENT DETAILS:</u></b>
 
 * Download `Python` (above version 3.9) 
 * Download `Anaconda` (any version but latest version preferred) to manage virtual environments.
