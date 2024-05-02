@@ -1,7 +1,7 @@
 <div style="text-align:center;">***Start of README***</div>
 <div style="text-align:center;font-style: italic;">***LAST UPDATED ON: 04/30/2024***</div><br>
 
-# Project 1: Gaze and Prompt-based Object Detection
+
 
 <b><u>BASIC SOFTWARE REQUIREMENT DETAILS:</u></b>
 
@@ -16,7 +16,7 @@
     * Setup CUDA Version 12.2 (The pipeline was implemented using this version) - Instructions mentioned on <a href='https://developer.nvidia.com/cuda-12-2-0-download-archive?target_os=Windows&target_arch=x86_64&target_version=10&target_type=exe_local'>this website</a>. Choose your corresponding options that match your system. Use default options.
     * You can check your CUDA version by opening a command prompt and typing `nvidia-smi`. Check your environmental path variables to ensure that CUDA is in your path. 
 * Install `Git` (Optional but makes life easier) - <a href='https://git-scm.com/'> Download</a>. Choose visual studio code as default editor used by GIT. Use default options except not to use the credential manager. 
-
+# Project 1: Gaze and Prompt-based Object Detection
 <b><u>SETUP:</u></b>
  
 1. Open `anaconda prompt` (via windows search box).
