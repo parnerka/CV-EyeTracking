@@ -43,7 +43,7 @@ This `README` contains the data collection protocol for the custom unreal enviro
     - The bigger barrier (next to the orange barricade)
 <br>
 
-    <b>NOTE:</b> You can view these objects from any angle you want but make sure to follow the fixation process mentioned above to avoid errors during validation. 
+    ---> NOTE: You can view these objects from any angle you want but make sure to follow the fixation process mentioned above to avoid errors during validation. 
 
 6. When finished with the data collection:
     - type `Tack.end`
