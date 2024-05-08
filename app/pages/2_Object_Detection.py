@@ -1,3 +1,5 @@
+# This file contains the code for the Object Detection page of the web app.
+
 import streamlit as st
 import pandas as pd
 from pages.obj_detection_deps.detect_objects import batch_process_obj_det, batch_process_obj_det_v2
@@ -25,6 +27,8 @@ bounding_box_size_increase = st.number_input("Input bounding box size (scale is 
 obj_input_prompt = st.text_input('Prompt the objects to be detected. For optimal performance avoid prompting more than 10 Objects (eg. yellow star . blue rectangle . hand .) ', help='Prompt Format: "Obj1<space>.<space>Obj2<space>.<space>Obj3<space>."')
 
 submit = st.button('Start Processing', type='primary')
+
+# Process the data
 if submit:
     tobii_data = pd.read_csv(gaze_data_loc)
     if gaze_data_type == 'Type 1':

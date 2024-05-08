@@ -1,3 +1,5 @@
+# This file contains the code to visualize the detected object, gaze point, and screen in a video format.
+
 import cv2
 import os
 import numpy as np
@@ -5,8 +7,9 @@ import pandas as pd
 from time import sleep
 from stqdm import stqdm
 
-bbsize = 1.0
+bbsize = 1.0  # Default bounding box size - global variable
 
+# Function to convert normalized coordinates to standard coordinates
 def get_norm_coor(coord):
     # if not coord:
     #     return []  # Return an empty list if coord is empty
@@ -36,6 +39,7 @@ def get_norm_coor(coord):
     else:
         return []
 
+# Function to visualize the detected object, gaze point, and screen in a video format - for the video dataset
 def visualize(data, video_loc, bb_size, sr, file_name):
     global bbsize
     bbsize = bb_size
@@ -101,13 +105,13 @@ def visualize(data, video_loc, bb_size, sr, file_name):
     output_video.release()
     cv2.destroyAllWindows()
 
+# Function to visualize the detected object, gaze point, and screen in a video format - for the screenshot dataset
 def visualize_v2(data, bb_size, sr, ss_folder, file_name):
     global bbsize
     bbsize = bb_size
     data['Object Coordinates'] = data['Object Coordinates'].apply(get_norm_coor)
+    
     # visualizer code to display the detected screen and object together along with the gaze point
-    # cap = cv2.VideoCapture(video_loc)
-
     # Create a VideoWriter object to save the output video as MP4
     output_video = cv2.VideoWriter(file_name, cv2.VideoWriter_fourcc(*'H264'), sr, (1920, 1080))    # CODEC might throw a warning if the right library format is not installed
 
@@ -116,15 +120,6 @@ def visualize_v2(data, bb_size, sr, ss_folder, file_name):
         row = data.iloc[i]
         timestamp = row['timestamp']
         fr_path = os.path.join(ss_folder, timestamp)
-
-        # Seek to the specified timestamp in the video
-        #cap.set(cv2.CAP_PROP_POS_MSEC, int(timestamp * 1000))
-
-        # Read the frame at the specified timestamp
-        # ret, frame = cap.read()
-
-        # if not ret:
-        #     break
         frame = cv2.imread(fr_path)
         gaze_column = row['gaze2d']
         if (len(gaze_column) == 2) and (pd.isna(gaze_column[0]) is not np.nan and pd.isna(gaze_column[1]) is not np.nan):
@@ -161,7 +156,5 @@ def visualize_v2(data, bb_size, sr, ss_folder, file_name):
         # Pause for a brief moment (adjust the delay as needed)
         cv2.waitKey(50)  # 50 milliseconds delay
 
-    # Release the video objects and close the output video
-    #cap.release()
     output_video.release()
     cv2.destroyAllWindows()

@@ -1,3 +1,5 @@
+# This file is used to create the Preview Page of the Web Application
+
 import sys
 sys.path.append("C:\\Users\\ARL")   # Path where the GroundingDINO library was cloned - The library won't be detected if this is not set properly
 import torch

@@ -1,3 +1,5 @@
+# This file contains the code for the Home page of the Streamlit app.
+
 import streamlit as st
 
 st.set_page_config(page_title="Gaze-Based Object Detection")
