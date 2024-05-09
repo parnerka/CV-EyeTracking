@@ -111,6 +111,20 @@
 
 <br>
 
+# Details about the results
+
+## 1. Object Detection Results
+- The GUI will output two files: 
+    1) CSV file - which logs object detection results for each frame in the gaze data
+    2) Output Video - which combines all the extracted frames/screenshots and visualizes the object that is being looked at, along with the gaze point for reference. 
+
+- Headers in the output CSV and what they signify:
+    1. wjdw
+
+
+
+## 2. Screen Tracking Results
+
 <b>FOOTER:</b>
 
 * <b>FOR ANY QUERIES RELATED TO THE REPOSITORY, PLEASE REACH OUT TO DR. RUSSELL COHEN HOFFING.</b>
