@@ -119,11 +119,39 @@
     2) Output Video - which combines all the extracted frames/screenshots and visualizes the object that is being looked at, along with the gaze point for reference. 
 
 - Headers in the output CSV and what they signify:
-    1. wjdw
-
-
+    1. timestamp: Original video timestamp. Units: seconds
+    2. Output_Video_Timestamp: Output video timestamp. Units: seconds
+    3. gaze2d: Gaze coordinates in a frame. Units: Normalized coordinates (Value between 0 and 1. Normalized using the width and height of the frame i.e. 1920x1080 in our case)
+    4. Object_Label: The label of the object that's being looked at (Mentioned in the prompt).
+    5. Object_BB: The bounding box of the object that's being looked at. Format: Normalized YOLO format - [x_center, y_center, width, height]
+    6. Overlapping_Objects: List of overlapping object labels that encompass the gaze point. Can be useful when objects are cluttered around the gaze point.
+    7. Overlapping_Objects_BBs: List of bounding boxes of overlapping object labels that encompass the gaze point. Format: Normalized YOLO format - [x_center, y_center, width, height]
+    8. Detected_Objects: All the objects that are detected in a frame based on the prompt that was provided.
+    9. BBs_all: Bounding boxes of all the objects that are detected in a frame based on the prompt that was provided. Format: Normalized YOLO format - [x_center, y_center, width, height]
 
 ## 2. Screen Tracking Results
+- The screen tracking jupyter notebook will output two files: 
+    1) CSV file - which logs screen tracking results for each frame in the gaze data
+    2) Output Video - which combines all the extracted frames/screenshots and visualizes the screen that is being looked at, along with the gaze point for reference. 
+
+- Headers in the output CSV and what they signify:
+    1. timestamp: Original video timestamp. Units: seconds
+    2. Output_Video_Timestamp: Output video timestamp. Units: seconds
+    3. gaze2d_x: X-coordinate of the gaze point in a frame. Units: Standard (not normalized)
+    4. gaze2d_y: Y-coordinate of the gaze point in a frame. Units: Standard (not normalized)
+    4. Screen: The number of the screen that's being looked at.
+    5. BL: (x, y) coordinates of the top-right point of the bottom left April tag. Units: Standard (not normalized)
+    6. BR: (x, y) coordinates of the top-left point of the bottom right April tag. Units: Standard (not normalized)
+    7. TR: (x, y) coordinates of the bottom-left point of the top right April tag. Units: Standard (not normalized)
+    8. TL: (x, y) coordinates of the bottom-right point of the top left April tag. Units: Standard (not normalized)
+
+## How can we convert standard image co-ordinates to normalized co-ordinates:
+
+- Let's understand this with an example: Consider a standard image point (x, y). Let's also assume that the resolution of the image is 1920x1080. 
+    * Normalized x = (Standard x) / 1920
+    * Normalized y = (Standard y) / 1080
+
+- Eg. (1158.817056, 406.1419488) ---> (0.60355055, 0.37605736) ---> Can be verified in the demo app data.
 
 <b>FOOTER:</b>
 
