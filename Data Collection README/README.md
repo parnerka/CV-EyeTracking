@@ -33,7 +33,6 @@ This `README` contains the data collection protocol for the custom unreal enviro
 5. Once the data collection session starts, look at following objects in the environment. Note that you need to press the letter key `L` when you start to fixate on an object and press `L` again after you are done looking at the object for 5 seconds. This denotes the time interval you looked at that specific object (helps in setting up the ground truth). Follow the same process for all the objects mentioned below:
     - Table
     - Chair
-    - Rock
     - Blue Oil Barrel
     - Orange Traffic Cone
     - Porta Potty
